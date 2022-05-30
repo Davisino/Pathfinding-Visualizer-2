@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PathFinding-Visualizer</title>
+    <link rel="stylesheet" href="/css/home.css" />
+    <script type="module" src="/js/creator.js" defer></script>
+    <script type="module" src="/js/buttonsFunctionality.js" defer></script>
+    <script type="module" src="/js/tableFunctionality.js" defer></script>
+    <script type="module" src="/js/algos/dfs.js" defer></script>
+    <script type="module" src="/js/algos/dijkstras.js" defer></script>
+    <script type="module" src="/js/algos/astar/astar.js" defer></script>
+
+  </head>
+  <body>
+    <div class="top">
+      <div class="title">Pathfinding Visualizer</div>
+      <div>
+        <ul class="nav-bar">
+          <li><button class="algo" id="dfs-btn">DFS</button></li>
+          <li><button class="algo" id="dijkstra-btn">Dijkstra</button></li>
+          <li><button class="algo" id="bfs-btn">BFS</button></li>
+
+          <li class="separator not-algo">Mazes</li>
+          <li class="not-algo" id="random-target-btn">
+          Random Pointers
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="table-container">
+      <table id="grid" class="table" cellspacing="0" cellpadding="0"></table>
+    </div>
+
+    <div class="bottom">
+      <div class="bottom-container"">
+        <div class="container-row">
+         <p>Width:</p>
+          <div class="slider-container">
+            <input
+              type="range"
+              min="2"
+              max="60"
+              value="45"
+              class="slider"
+              id="myWidth"
+            />
+          </div>
+        </div>
+        <div class="container-row">
+          <p>Height:</p>
+          <div class="slider-container">
+            <input
+              type="range"
+              min="2"
+              max="25"
+              value="25"
+              class="slider"
+              id="myHeight"
+            />
+          </div>
+        </div>
+
+        <div class="container-row">
+          <p>Velocity:</p>
+          <div>
+            max
+            <input
+              type="range"
+              min="10"
+              max="200"
+              value="10"
+              steps="10"
+              class="slider"
+              id="myVelocity"
+            />
+            min
+          </div>
+        </div>
+        <!-- 
+      <div>
+        <button id="clear-table-btn">Clear Board</button>
+      </div> -->
+      </div>
+    </div>
+  </body>
+</html>
