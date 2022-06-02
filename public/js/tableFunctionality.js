@@ -1,6 +1,7 @@
+import { generateAstarTable } from "./algos/astar/astar.js";
 import { Graph } from "./algos/DS/Graph.js";
 import * as creator from "./creator.js";
-
+import * as astar from "./algos/astar/astar.js";
 // CLEAR TABLE
 
 // OPTIMIZED SOLUTION
@@ -43,6 +44,14 @@ const table = document.querySelector("table");
 let mouseIsDown = false;
 
 export const colorTd = (e) => {
+  // ALTER A* Table grid
+
+  const [row, col] = e.target.id.split("-");
+
+  astar.updateField(Number(row), Number(col));
+
+  // Alter Graph search algorithms Grid
+
   if (e.target.className == "start" || e.target.className == "end") {
     return;
   }
@@ -71,7 +80,6 @@ export const colorTd = (e) => {
     newGraphVertices.push(rowGraph);
   }
   creator.updateGraph(newTableGraph, newGraphVertices);
-  console.log(creator.tableGraph);
 };
 
 table.onmousedown = (e) => (mouseIsDown = true);

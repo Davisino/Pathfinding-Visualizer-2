@@ -58,7 +58,7 @@ td {
   display: grid;
   grid-template-columns: 15% 85%;
   background-color: rgb(17, 67, 154);
-  height: 70px;
+  height: fit-content;
 }
 .title {
   font-size: 1.7rem;

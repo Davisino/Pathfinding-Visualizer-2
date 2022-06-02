@@ -1,3 +1,11 @@
+import { velocity } from "../../creator.js";
+var h = 25;
+var w = 45;
+export var grid = new Array(h);
+var openSet = [];
+var closedSet = [];
+
+var path = [];
 function removeFromArray(arr, element) {
   for (let i = arr.length - 1; i >= 0; i--) {
     if (arr[i] == element) {
@@ -5,122 +13,184 @@ function removeFromArray(arr, element) {
     }
   }
 }
-function heuristic(a, b) {
-  let d = Math.abs(a.i - b.i) + Math.abs(a.j - b.j);
-  return d;
+function manhattanDistance(nodeOne, nodeTwo) {
+  let nodeOneCoordinates = nodeOne.id.split("-").map((ele) => parseInt(ele));
+  let nodeTwoCoordinates = nodeTwo.id.split("-").map((ele) => parseInt(ele));
+  let xOne = nodeOneCoordinates[0];
+  let xTwo = nodeTwoCoordinates[0];
+  let yOne = nodeOneCoordinates[1];
+  let yTwo = nodeTwoCoordinates[1];
+
+  let xChange = Math.abs(xOne - xTwo);
+  let yChange = Math.abs(yOne - yTwo);
+
+  return xChange + yChange;
 }
-var cols = 45;
-var rows = 25;
-var grid = new Array(cols);
-var openSet = [];
-var closedSet = [];
-var start;
-var end;
-var path = [];
+export function updateField(row, col) {
+  if (grid[row][col].isWall == false) {
+    grid[row][col].isWall = true;
+  } else {
+    grid[row][col].isWall = false;
+  }
+}
+function reconstruct_path(cameFrom, current) {
+  let total_path = [current];
+  while (current in cameFrom) {
+    current = cameFrom[current];
+    total_path.unshift(current);
+  }
+
+  return total_path;
+}
+function mergeNeighbors() {
+  // ADD NEIGHTBORS
+
+  for (let i = 0; i < h; i++) {
+    for (let j = 0; j < w; j++) {
+      // Avoid mergin with spots that are walls
+      if (grid[i][j].isWall === true) {
+        continue;
+      }
+      grid[i][j].addNeighbors(grid);
+    }
+  }
+}
+
 function Spot(i, j, id) {
-  this.i = i;
-  this.j = j;
+  this.i = i; //height
+  this.j = j; // width
   this.f = 0;
   this.g = 0;
   this.h = 0;
   this.id = id;
   this.previous = undefined;
   this.neighbors = [];
+  this.isWall = false;
   this.addNeighbors = function (grid) {
     let i = this.i;
     let j = this.j;
-    if (i < cols - 1) {
-      this.neighbors.push(grid[i + 1][j]);
-    }
-    if (i > 0) {
+
+    // up right down left
+    if (i > 0 && grid[i - 1][j].isWall === false) {
+      // up
       this.neighbors.push(grid[i - 1][j]);
     }
-    if (j < rows - 1) {
+
+    if (i < h - 1 && grid[i + 1][j].isWall === false) {
+      // down
+      this.neighbors.push(grid[i + 1][j]);
+    }
+
+    if (j < w - 1 && grid[i][j + 1].isWall === false) {
       this.neighbors.push(grid[i][j + 1]);
     }
-    if (j > 0) {
+    if (j > 0 && grid[i][j - 1].isWall === false) {
       this.neighbors.push(grid[i][j - 1]);
     }
   };
 }
-function Astar() {
-  for (let i = 0; i < cols; i++) {
-    grid[i] = new Array(rows);
+
+export function generateAstarTable(width, height) {
+  h = height;
+  w = width;
+
+  grid = [];
+  for (let i = 0; i < height; i++) {
+    grid[i] = new Array(width);
   }
 
-  for (let i = 0; i < cols; i++) {
-    for (let j = 0; j < rows; j++) {
+  for (let i = 0; i < height; i++) {
+    for (let j = 0; j < width; j++) {
       grid[i][j] = new Spot(i, j, `${i}-${j}`);
     }
   }
-  for (let i = 0; i < cols; i++) {
-    for (let j = 0; j < rows; j++) {
-      grid[i][j].addNeighbors(grid);
-    }
-  }
+  console.log(grid);
+  return grid;
+}
+generateAstarTable(w, h);
 
-  start = grid[11][12];
-  end = grid[12][32];
+export function Astar(start, end) {
+  mergeNeighbors();
 
-  console.log(start, end);
-  //   return;
+  let openSet = [];
+  let pathToColor = [];
+
+  let cameFrom = {};
+
+  grid.forEach((row) => {
+    row.forEach((spot) => {
+      spot.g = Infinity;
+    });
+  });
+
+  grid.forEach((row) => {
+    row.forEach((spot) => {
+      spot.f = Infinity;
+    });
+  });
+  start.g = 0;
+  start.f = manhattanDistance(start, end);
   openSet.push(start);
-  let endPoint;
+
+  let currentNode;
   while (openSet.length > 0) {
-    let winner = 0;
+    let winner;
+    let currentF = Infinity;
     for (let i = 0; i < openSet.length; i++) {
-      if (openSet[i].f < openSet[winner].f) {
-        winner = i;
+      if (openSet[i].f < currentF) {
+        currentF = openSet[i].f;
+        winner = openSet[i];
+        currentNode = winner;
       }
     }
-    let current = openSet[winner];
-    if (current === end) {
-      endPoint = current;
-      console.log("DONE!");
+    if (winner == end) {
+      return [pathToColor, reconstruct_path(cameFrom, winner.id)];
     }
+    removeFromArray(openSet, winner);
+    pathToColor.push(winner.id);
 
-    removeFromArray(openSet, current);
-    closedSet.push(current);
-
-    let neightbors = current.neighbors;
-    console.log(current, "ss");
-    for (let i = 0; i < neightbors.length; i++) {
-      let neighbor = neightbors[i];
-      console.log(neighbor);
-      if (!closedSet.includes(neighbor)) {
-        let tempG = current.g + 1;
-        if (openSet.includes(neighbor)) {
-          if (tempG < neighbor.g) {
-            neighbor.g = tempG;
-          }
-        } else {
-          neighbor.g = tempG;
-          openSet.push(neighbor);
+    winner.neighbors.forEach((elem) => {
+      const tempScore = winner.g + 1;
+      if (tempScore < elem.g) {
+        cameFrom[elem.id] = winner.id;
+        elem.g = tempScore;
+        elem.f = tempScore + manhattanDistance(elem, end);
+        if (!openSet.includes(elem)) {
+          openSet.push(elem);
         }
       }
-      path.push(neighbor.previous);
-      neighbor.h = heuristic(neighbor, end);
-      neighbor.f = neighbor.g + neighbor.h;
-      neighbor.previous = current;
-    }
+    });
   }
-  let temp = endPoint;
 
-  return path;
+  return [pathToColor, reconstruct_path(cameFrom, currentNode.id)];
 }
 
-const animations = Astar();
+export function useAstar(start, end) {
+  console.log(grid);
+  const [row1, col1] = start.split("-");
+  const [row2, col2] = end.split("-");
+  start = grid[row1][col1];
+  end = grid[row2][col2];
+  const [animations, shortestDistance] = Astar(start, end);
 
-const ids = [];
-for (let i = 0; i < animations.length; i++) {
-  if (animations[i]) {
-    ids.push(animations[i].id);
+  shortestDistance.forEach((el) => {
+    animations.push(`$${el}`);
+  });
+
+  for (let i = 0; i < animations.length; i++) {
+    setTimeout(() => {
+      const field = animations[i];
+      const idShortestPath = animations[i].slice(1);
+      if (field[0] !== "$" && field != start.id && field != end.id) {
+        document.getElementById(`${animations[i]}`).className = "visited";
+      } else if (
+        field[0] == "$" &&
+        idShortestPath != start.id &&
+        idShortestPath != end.id
+      ) {
+        document.getElementById(`${idShortestPath}`).className =
+          "shortest-path";
+      }
+    }, i * velocity);
   }
 }
-
-for (let i = 0; i < ids.length; i++) {
-  setTimeout(() => {
-    document.getElementById(`${ids[i]}`).style.background = "blue";
-  }, i * 2);
-}
-console.log(ids);

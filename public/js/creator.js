@@ -46,6 +46,7 @@ export const generateTable = (w = 45, h = 25) => {
   mergeVertices();
 };
 generateTable();
+
 // TODO HANDLE GRID WHEN SOME VERTICES DO NOT EXIST THEY CANT BE MERGED
 // WITH VERTICES -> e.g "2-4" with "2-5" if 2-5 IS A WALL.
 function mergeVertices() {
