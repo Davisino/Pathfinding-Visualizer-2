@@ -38,18 +38,22 @@ I chose this project because I wanted to learn more about data structures and sp
 ## :sparkles: Features
 
 :heavy_check_mark: Grid\
+
 Here you can draw obstacles by clicking and dragging the cursor over the grid.
 Unfortunately, we cannot drag the two nodes at the moment, so we need to use the
 "random Pointers" feature. This is something I am working towards now.
 <img src="./public/images/grid.png">
 :heavy_check_mark: Searching Algorithms\
+
 The buttons below show the algorithms that can be used.
 The algorithm starts running as soon as you click on one of them.
 <img src="./public/images/algorithms.png">
 :heavy_check_mark: Properties\
+
 You can also change the width and height of the grid and even the velocity of the algorithms.
-<img src="./public/images/properties.png" >
+<img src="./public/images/properties.png" >\
 :heavy_check_mark: Mazes[development] & random Pointer\
+
 Lastly, you can click on mazes and generate a default maze to test each search algorithm.
 
 <img src="./public/images/development.png">
