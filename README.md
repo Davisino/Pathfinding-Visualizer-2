@@ -42,6 +42,7 @@ I chose this project because I wanted to learn more about data structures and sp
 Here you can draw obstacles by clicking and dragging the cursor over the grid.
 Unfortunately, we cannot drag the two nodes at the moment, so we need to use the
 "random Pointers" feature. This is something I am working towards now.
+
 <img src="./public/images/grid.png">
 :heavy_check_mark: Searching Algorithms
 
