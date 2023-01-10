@@ -95,6 +95,5 @@ Made with :heart: by <a href="https://github.com/Davisino" target="_blank">Davis
 
 <a href="#top">Back to top</a>
 =======
-# Pathfinding-Visuazlier-2022-
-This is the new version of my previous pathfinding visualizer. It was built in a more structural way "in terms of code". It now has 2 new more algorithms, obstacles and a new UI with a lot of functionalities. Check it out here!  https://pathfindingvisualizer.herokuapp.com/
+
 
