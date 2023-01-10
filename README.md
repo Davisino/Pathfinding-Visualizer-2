@@ -52,7 +52,7 @@ The algorithm starts running as soon as you click on one of them.
 :heavy_check_mark: Properties
 
 You can also change the width and height of the grid and even the velocity of the algorithms.
-<img src="./public/images/properties.png" >\
+<img src="./public/images/properties.png" >
 
 :heavy_check_mark: Mazes[development] & random Pointer
 
