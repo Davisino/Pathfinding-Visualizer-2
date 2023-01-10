@@ -43,16 +43,18 @@ Here you can draw obstacles by clicking and dragging the cursor over the grid.
 Unfortunately, we cannot drag the two nodes at the moment, so we need to use the
 "random Pointers" feature. This is something I am working towards now.
 <img src="./public/images/grid.png">
-:heavy_check_mark: Searching Algorithms\
+:heavy_check_mark: Searching Algorithms
 
 The buttons below show the algorithms that can be used.
 The algorithm starts running as soon as you click on one of them.
 <img src="./public/images/algorithms.png">
-:heavy_check_mark: Properties\
+
+:heavy_check_mark: Properties
 
 You can also change the width and height of the grid and even the velocity of the algorithms.
 <img src="./public/images/properties.png" >\
-:heavy_check_mark: Mazes[development] & random Pointer\
+
+:heavy_check_mark: Mazes[development] & random Pointer
 
 Lastly, you can click on mazes and generate a default maze to test each search algorithm.
 
