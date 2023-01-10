@@ -37,7 +37,7 @@ I chose this project because I wanted to learn more about data structures and sp
 
 ## :sparkles: Features
 
-:heavy_check_mark: Grid\
+:heavy_check_mark: Grid
 
 Here you can draw obstacles by clicking and dragging the cursor over the grid.
 Unfortunately, we cannot drag the two nodes at the moment, so we need to use the
