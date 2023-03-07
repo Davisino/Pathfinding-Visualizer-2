@@ -12,80 +12,106 @@
     <script type="module" src="/js/algos/dfs.js" defer></script>
     <script type="module" src="/js/algos/dijkstras.js" defer></script>
     <script type="module" src="/js/algos/astar/astar.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   </head>
   <body>
-    <div class="top">
-      <div class="title">Pathfinding Visualizer</div>
-      <div>
-        <ul class="nav-bar">
-          <li><button class="algo" id="dfs-btn">DFS</button></li>
-          <li><button class="algo" id="dijkstra-btn">Dijkstra</button></li>
-          <li><button class="algo" id="bfs-btn">BFS</button></li>
-          <li><button class="algo" id="astar-btn">A*</button></li>
-          <li><button class="algo" id="greedyBfs-btn">Greedy BFS</button></li>
-          <!-- <li><button class="algo" id="bfs-btn">Bidiriectional Swarm Algorithm</button></li> -->
-          <li class="separator not-algo">Mazes</li>
-          <li class="not-algo" id="random-target-btn">
-          Random Pointers
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pathfindingvisualizer">Pathfinding-Visualizer</a>
+          </li>
+         
         </ul>
       </div>
-    </div>
-    <div class="table-container">
-      <table id="grid" class="table" cellspacing="0" cellpadding="0"></table>
-    </div>
-
-    <div class="bottom">
-      <div class="bottom-container"">
-        <div class="container-row">
-         <p>Width:</p>
-          <div class="slider-container">
-            <input
-              type="range"
-              min="2"
-              max="60"
-              value="45"
-              class="slider"
-              id="myWidth"
-            />
-          </div>
+    </nav>
+    <div class="visual-wrapper">
+      <div class="top">
+        <div class="title">Pathfinding Visualizer</div>
+        <div>
+          <ul class="nav-bar">
+            <li><button class="algo" id="dfs-btn">DFS</button></li>
+            <li><button class="algo" id="dijkstra-btn">Dijkstra</button></li>
+            <li><button class="algo" id="bfs-btn">BFS</button></li>
+            <li><button class="algo" id="astar-btn">A*</button></li>
+            <li><button class="algo" id="greedyBfs-btn">Greedy BFS</button></li>
+            <!-- <li><button class="algo" id="bfs-btn">Bidiriectional Swarm Algorithm</button></li> -->
+            <li class="separator not-algo">Mazes</li>
+            <li class="not-algo" id="random-target-btn">
+            Random Pointers
+            </li>
+          </ul>
         </div>
-        <div class="container-row">
-          <p>Height:</p>
-          <div class="slider-container">
-            <input
-              type="range"
-              min="2"
-              max="25"
-              value="25"
-              class="slider"
-              id="myHeight"
-            />
+      </div>
+      <div class="table-container">
+        <table id="grid" class="table" cellspacing="0" cellpadding="0"></table>
+      </div>
+    
+      <div class="bottom">
+        <div class="bottom-container"">
+          <div class="container-row">
+           <p>Width:</p>
+            <div class="slider-container">
+              <input
+                type="range"
+                min="2"
+                max="60"
+                value="45"
+                class="slider"
+                id="myWidth"
+              />
+            </div>
           </div>
-        </div>
-
-        <div class="container-row">
-          <p>Velocity:</p>
-          <div>
-            max
-            <input
-              type="range"
-              min="10"
-              max="200"
-              value="10"
-              steps="10"
-              class="slider"
-              id="myVelocity"
-            />
-            min
+          <div class="container-row">
+            <p>Height:</p>
+            <div class="slider-container">
+              <input
+                type="range"
+                min="2"
+                max="25"
+                value="25"
+                class="slider"
+                id="myHeight"
+              />
+            </div>
           </div>
+  
+          <div class="container-row">
+            <p>Velocity:</p>
+            <div>
+              max
+              <input
+                type="range"
+                min="10"
+                max="200"
+                value="10"
+                steps="10"
+                class="slider"
+                id="myVelocity"
+              />
+              min
+            </div>
+          </div>
+  
         </div>
-        <!-- 
-      <div>
-        <button id="clear-table-btn">Clear Board</button>
-      </div> -->
       </div>
     </div>
+    
+
+
+
+
   </body>
 </html>

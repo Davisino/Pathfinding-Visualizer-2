@@ -5,10 +5,20 @@ const app = express();
 
 app.use(express.static(__dirname + "/public"));
 
-const homePage = fs.readFileSync(`${__dirname}/index.html`, "utf8");
+const homePage = fs.readFileSync(`${__dirname}/home.html`, "utf8");
+const aboutPage = fs.readFileSync(`${__dirname}/about.html`, "utf8");
+const algoPage = fs.readFileSync(`${__dirname}/index.html`, "utf8");
 
-app.get("/", (req, res) => {
+app.get(["/home", "/"], (req, res) => {
   res.end(homePage);
+});
+
+app.get("/about", (req, res) => {
+  res.end(aboutPage);
+});
+
+app.get("/pathfindingvisualizer", (req, res) => {
+  res.end(algoPage);
 });
 
 app.listen(PORT, () => {

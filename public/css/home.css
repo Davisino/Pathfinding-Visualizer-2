@@ -2,7 +2,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: sans-serif;
-  color: rgb(255, 255, 255);
+  /* color: rgb(255, 255, 255); */
 } /* TABLE */
 
 #grid {
@@ -201,3 +201,8 @@ td {
     background-color: rgba(228, 252, 15, 0.953);
   }
 }
+
+/* .visual-wrapper {
+  width: 50%;
+  margin: 0 auto;
+} */
