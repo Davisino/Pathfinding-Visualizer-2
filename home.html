@@ -4,165 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Pathfinding-Visualizer</title>
     <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/common.css" />
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand font-weight-bold " href="#">Pathfinding-Visualizer</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="home">Graphs and Search Algorithms<span class="sr-only">(current)</span></a>
-            </li>
-          
-            <li class="nav-item">
-              <a class="nav-link" href="pathfindingvisualizer">Project</a>
-            </li>
-         
-          </ul>
-        </div>
-      </nav>
     
-    
-    
+    <nav class="topBar">
       <div>
-        <div class="card">
-            <div class="card-header font-weight-bold ">
-              Data Strucutres - Graphs
-            </div>
-            <div class="card-body">
-              <h5 class="card-title"></h5>
-              <p class="card-text">
-                Graphs are data structures that are used to represent relationships between objects. They consist of nodes (vertices) and edges, where the edges connect the nodes. Graphs are used in a variety of applications, including social networks, transportation systems, and computer networks.
-              </p>
-              <a href="https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/" class="btn btn-secondary">Learn More</a>
-            </div>
-          </div>
-
-          <div class="card text-center">
-            <div class="card-body font-weight-bold h1" >
-              Some* Graph Search Algorithms
-            </div>
-          </div>
+        <div class="logo-container">Logo</div>
+        <div><h1>Pathfinding-Visualizer</h1></div>
       </div>
-      
-      <div class="container">
-        <div class="row ">
-          
-      <div class="card">
-        <div class="card-header" >
-          <h5 class="mb-0">
-            <div class="font-weight-bold h3">
-              Depth-First Search (DFS)
-            </div>
-          </h5>
-        </div>
-          <div class="card-body">
-              DFS is a graph traversal algorithm that explores a graph as far as possible along each branch before backtracking. It uses a stack to keep track of the visited nodes and their neighbors. DFS is useful for exploring all the vertices in a graph and can also be used to detect cycles in a graph.
-Example: Suppose we have a graph with five nodes and the following edges: (1,2), (1,3), (2,4), (2,5). A DFS traversal of this graph starting from node 1 would visit the nodes in the following order: 1, 2, 4, 5, 3.
-          </div>
-          <a href="https://en.wikipedia.org/wiki/Depth-first_search#:~:text=Depth%2Dfirst%20search%20(DFS),along%20each%20branch%20before%20backtracking." class="btn btn-secondary">Learn More</a>
-
+      <div>
+        <div><a href="/home">Learn</a></div>
+        <div><a href="/pathfindingvisualizer">Playground</a></div>
+        <div><a href="/about">About</a></div>
       </div>
-
-        </div>
-
-        <div class="row">
-
-            <div class="card">
-                <div class="card-header" >
-                  <h5 class="mb-0">
-                    <div class="font-weight-bold h3">
-                      Breadth-First Search (DFS)
-                    </div>
-                  </h5>
-                </div>
-                  <div class="card-body">
-                    BFS is another graph traversal algorithm that explores a graph level by level. It uses a queue to keep track of the visited nodes and their neighbors. BFS is useful for finding the shortest path between two nodes in an unweighted graph and can also be used to detect connected components in a graph.
-        
-                    Example: Using the same graph as above and starting from node 1, a BFS traversal would visit the nodes in the following order: 1, 2, 3, 4, 5.
-                </div>
-                <a href="https://en.wikipedia.org/wiki/Breadth-first_search" class="btn btn-secondary">Learn More</a>
-        
-              </div>
-
-        </div>
-        
-        <div class="row">
-            <div class="card">
-                <div class="card-header" >
-                  <h5 class="mb-0">
-                    <div class="font-weight-bold h3">
-                      A* Algorithm
-                    </div>
-                  </h5>
-                </div>
-                  <div class="card-body">
-                    A* is a pathfinding algorithm that uses a heuristic function to guide its search for the shortest path between two nodes in a weighted graph. It combines the cost of the path from the starting node to the current node with an estimate of the cost of the path from the current node to the destination node. A* is guaranteed to find the optimal path if the heuristic function is admissible and consistent.
-        
-        Example: Suppose we have a weighted graph with five nodes and the following edges and weights: (1,2,3), (1,3,4), (2,4,1), (2,5,2), (3,5,5). If we want to find the shortest path between nodes 1 and 5 using A*, we can use the Manhattan distance between the nodes as the heuristic function. The algorithm would explore the nodes in the following order: 1, 2, 4, 5, and the shortest path would be 1 -> 2 -> 5 with a total weight of 5.
-                
-        </div>
-        <a href="https://en.wikipedia.org/wiki/A*_search_algorithm" class="btn btn-secondary">Learn More</a>
-        
-              </div>
-        </div>
-        <div class="row">
-
-      <div class="card">
-        <div class="card-header" >
-          <h5 class="mb-0">
-            <div class="font-weight-bold h3">
-                Dijkstra's Algorithm
-            </div>
-          </h5>
-        </div>
-          <div class="card-body">
-            Dijkstra's algorithm is another pathfinding algorithm that finds the shortest path between two nodes in a weighted graph. It uses a priority queue to keep track of the unvisited nodes and their distances from the starting node. Dijkstra's algorithm is guaranteed to find the optimal path if all the edge weights are non-negative.
-
-            Example: Using the same weighted graph as above and starting from node 1, Dijkstra's algorithm would explore the nodes in the following order: 1, 2, 4, 5, 3, and the shortest path to node 5 would be 1 -> 2 -> 5 with a total weight of 5.
-            
-                      </div>
-                      <a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm" class="btn btn-secondary">Learn More</a>
-
-      </div>
-        </div>
-        <div class="row">
-            <div class="card">
-                <div class="card-header" >
-                  <h5 class="mb-0">
-                    <div class="font-weight-bold h3">
-                      Greedy Best-First Search 
-                    </div>
-                  </h5>
-                </div>
-                  <div class="card-body">
-                    Greedy Best-First Search is a variant of A* that uses only the heuristic function to guide its search. It always expands the node that appears to be closest to the goal based on the heuristic estimate. Greedy BFS is not guaranteed to find the optimal path but can be faster than A* in some cases.
-        
-                    Example: Using the same weighted graph as above and starting from node 1, Greedy BFS would explore the nodes in the following order: 1, 2, 5, and the path to node 5 would be 1 -> 2 -> 5 with a total weight of 5.          </div>
-                    <a href="https://en.wikipedia.org/wiki/Best-first_search" class="btn btn-secondary">Learn More</a>
-        
-                </div>
-        </div>
-
-      </div>
-
-     
-      
-
+    </nav>
     
-
-     
-
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
 </html>
