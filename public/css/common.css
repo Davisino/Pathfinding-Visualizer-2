@@ -33,7 +33,7 @@ nav.topBar > div:nth-child(2) > div > a{
     text-decoration: none;
     color: white;
     border-bottom: 2px solid transparent;
-    transition: border-bottom-color 0.3s ease-in-out;
+    transition: border-bottom-color 0.1s ease-in-out;
 
 }
 nav.topBar > div:nth-child(2) > div > a:hover{    
