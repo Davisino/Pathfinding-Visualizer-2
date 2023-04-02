@@ -7,6 +7,11 @@
     <title>Pathfinding-Visualizer</title>
     <link rel="stylesheet" href="/css/home.css" />
     <link rel="stylesheet" href="/css/common.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin"
+    />
   </head>
   <body>
     <nav class="topBar">
@@ -49,56 +54,151 @@
         </section>
         <section id="visual-glossary">
           <!-- Content for Visual Glossary -->
-          <h2>Key Terms</h2>
-          <div>
-            <h2>Graph</h2>
-            <p>
-              A data structure that represents relationships or connections
-              between nodes (also called vertices) through edges (also called
-              links or arcs). Graphs can be used to model various types of
-              structures such as social networks, transportation systems, and
-              computer networks.
-            </p>
-          </div>
 
-          <div>
-            <h2>Node (Vertex)</h2>
-            <p>
-              A fundamental unit of a graph that represents an entity, such as a
-              person, place, or thing. Nodes are connected by edges to represent
-              relationships or associations between entities.
-            </p>
-          </div>
-          <div>
-            <h2>Edge (Link)</h2>
-            <p>
-              A connection between two nodes in a graph that represents a
-              relationship or association between the entities represented by
-              the nodes. Edges can be directed or undirected, and can also have
-              weights to represent the strength or cost of the connection.
-            </p>
-          </div>
-          <div>
-            <h2>Directed Graph</h2>
-            <p>
-              A graph where edges have a direction, indicating an asymmetric
-              relationship between nodes. In a directed graph, each edge has an
-              initial node (tail) and a terminal node (head).
-            </p>
-          </div>
-          <div>
-            <h2>Undirected Graph</h2>
-            <p>
-              A graph where edges do not have a direction, indicating a
-              symmetric relationship between nodes. In an undirected graph, an
-              edge simply connects two nodes without any specific direction.
-            </p>
+          <div class="visual-glossary-container">
+            <h2 class="glossary-title">Key Terms</h2>
+            <div class="glossary-item">
+              <h2 class="term-title">Graph</h2>
+              <p class="term-description">
+                A data structure that represents relationships or connections
+                between nodes (also called vertices) through edges (also called
+                links or arcs). Graphs can be used to model various types of
+                structures such as social networks, transportation systems, and
+                computer networks.
+              </p>
+            </div>
+
+            <div class="glossary-item">
+              <h2 class="term-title">Node (Vertex)</h2>
+              <p class="term-description">
+                A fundamental unit of a graph that represents an entity, such as
+                a person, place, or thing. Nodes are connected by edges to
+                represent relationships or associations between entities.
+              </p>
+            </div>
+            <div class="glossary-item">
+              <h2 class="term-title">Edge (Link)</h2>
+              <p class="term-description">
+                A connection between two nodes in a graph that represents a
+                relationship or association between the entities represented by
+                the nodes. Edges can be directed or undirected, and can also
+                have weights to represent the strength or cost of the
+                connection.
+              </p>
+            </div>
+            <div class="glossary-item">
+              <h2 class="term-title">Directed Graph</h2>
+              <p class="term-description">
+                A graph where edges have a direction, indicating an asymmetric
+                relationship between nodes. In a directed graph, each edge has
+                an initial node (tail) and a terminal node (head).
+              </p>
+            </div>
+            <div class="glossary-item">
+              <h2 class="term-title">Undirected Graph</h2>
+              <p class="term-description">
+                A graph where edges do not have a direction, indicating a
+                symmetric relationship between nodes. In an undirected graph, an
+                edge simply connects two nodes without any specific direction.
+              </p>
+            </div>
           </div>
         </section>
+
         <section id="quizzes-challenges">
-          <!-- Content for Quizzes & Challenges -->
-          <p>Quiz should go here</p>
+          <div class="quiz-container">
+            <h2 class="quiz-title">Pathfinding-Visualizer Quiz</h2>
+            <form class="quiz-form">
+              <div class="question-container">
+                <p class="question">
+                  1. Which algorithm guarantees the shortest path?
+                </p>
+                <div class="options">
+                  <input type="radio" id="q1-a" name="question1" value="A" />
+                  <label for="q1-a">A. Dijkstra's Algorithm</label><br />
+                  <input type="radio" id="q1-b" name="question1" value="B" />
+                  <label for="q1-b">B. Breadth-First Search</label><br />
+                  <input type="radio" id="q1-c" name="question1" value="C" />
+                  <label for="q1-c">C. Depth-First Search</label><br />
+                  <input type="radio" id="q1-d" name="question1" value="D" />
+                  <label for="q1-d">D. A* Search</label>
+                </div>
+              </div>
+              <div class="question-container">
+                <p class="question">
+                  2. Which search algorithms are guaranteed to find a path if
+                  one exists, but may not find the shortest path? (Choose all
+                  that apply)
+                </p>
+                <div class="options">
+                  <input type="checkbox" id="q2-a" name="question2" value="A" />
+                  <label for="q2-a">A. Dijkstra's Algorithm</label><br />
+                  <input type="checkbox" id="q2-b" name="question2" value="B" />
+                  <label for="q2-b">B. Breadth-First Search</label><br />
+                  <input type="checkbox" id="q2-c" name="question2" value="C" />
+                  <label for="q2-c">C. Depth-First Search</label><br />
+                  <input type="checkbox" id="q2-d" name="question2" value="D" />
+                  <label for="q2-d">D. A* Search</label>
+                </div>
+              </div>
+
+              <div class="question-container">
+                <p class="question">
+                  3. Which search algorithm uses a heuristic function to guide
+                  its search and often finds a solution more quickly than other
+                  algorithms?
+                </p>
+                <div class="options">
+                  <input type="radio" id="q3-a" name="question3" value="A" />
+                  <label for="q3-a">A. Dijkstra's Algorithm</label><br />
+                  <input type="radio" id="q3-b" name="question3" value="B" />
+                  <label for="q3-b">B. Breadth-First Search</label><br />
+                  <input type="radio" id="q3-c" name="question3" value="C" />
+                  <label for="q3-c">C. Depth-First Search</label><br />
+                  <input type="radio" id="q3-d" name="question3" value="D" />
+                  <label for="q3-d">D. A* Search</label>
+                </div>
+              </div>
+
+              <div class="question-container">
+                <p class="question">
+                  4. In a graph data structure, what is the term used to
+                  describe the number of edges connected to a node?
+                </p>
+                <div class="options">
+                  <input type="radio" id="q4-a" name="question4" value="A" />
+                  <label for="q4-a">A. Degree</label><br />
+                  <input type="radio" id="q4-b" name="question4" value="B" />
+                  <label for="q4-b">B. Path</label><br />
+                  <input type="radio" id="q4-c" name="question4" value="C" />
+                  <label for="q4-c">C. Connectivity</label><br />
+                  <input type="radio" id="q4-d" name="question4" value="D" />
+                  <label for="q4-d">D. Cycle</label>
+                </div>
+              </div>
+
+              <div class="question-container">
+                <p class="question">
+                  5. Which of the following graph traversal algorithms can be
+                  implemented using a stack data structure?
+                </p>
+                <div class="options">
+                  <input type="radio" id="q5-a" name="question5" value="A" />
+                  <label for="q5-a">A. Dijkstra's Algorithm</label><br />
+                  <input type="radio" id="q5-b" name="question5" value="B" />
+                  <label for="q5-b">B. Breadth-First Search</label><br />
+                  <input type="radio" id="q5-c" name="question5" value="C" />
+                  <label for="q5-c">C. Depth-First Search</label><br />
+                  <input type="radio" id="q5-d" name="question5" value="D" />
+                  <label for="q5-d">D. A* Search</label>
+                </div>
+              </div>
+
+              <button type="submit" class="submit-button">Submit</button>
+            </form>
+          </div>
         </section>
+
         <section id="videos-articles">
           <!-- Content for Videos & Articles -->
           <p>List of helpful videos to learn more about data structures</p>
