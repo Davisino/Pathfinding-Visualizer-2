@@ -257,7 +257,9 @@ div.content > nav  a:hover {
 
 div.content > main {
   padding: 1rem;
+  width: 80%;
   display: flex;
+  margin: 0 auto;
   border: solid 2px blue;
   display: flex;
   flex-direction: column;
@@ -265,5 +267,28 @@ div.content > main {
 }
 div.content > main >  section {
   margin-bottom: 2rem;
-  border: solid 2px red;
+ 
+}
+
+
+/* MAIN */
+
+.content > main {
+  color: rgb(137, 137, 154);
+}
+.content > main section#visual-glossary div h2 {
+  color:rgb(21, 40, 108);
+  font-size: 1rem;
+  border-left: solid 5px rgb(13, 115, 13);
+  padding-left: 6px;
+  font-weight: bold;
+}
+.content > main section#visual-glossary div p {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+#visual-glossary > h2:first-child {
+  font-size: 1.2rem;
+ 
 }
