@@ -7,11 +7,13 @@
     <title>Pathfinding-Visualizer</title>
     <link rel="stylesheet" href="/css/home.css" />
     <link rel="stylesheet" href="/css/common.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin"
-    />
+
+    <script type="module" src="/js/creator.js" defer></script>
+    <script type="module" src="/js/buttonsFunctionality.js" defer></script>
+    <script type="module" src="/js/tableFunctionality.js" defer></script>
+    <script type="module" src="/js/algos/dfs.js" defer></script>
+    <script type="module" src="/js/algos/dijkstras.js" defer></script>
+    <script type="module" src="/js/algos/astar/astar.js" defer></script>
   </head>
   <body>
     <nav class="topBar">
@@ -19,31 +21,101 @@
         <div class="logo-container">Logo</div>
         <div><h1>Pathfinding-Visualizer</h1></div>
       </div>
-      <div>
-        <div><a href="/home">Learn</a></div>
-        <div><a href="/pathfindingvisualizer">Playground</a></div>
-        <div><a href="/about">About</a></div>
-      </div>
     </nav>
 
     <div class="content">
-      <header class="titleContent">
-        <h1>Learning Section</h1>
-      </header>
       <nav>
         <ul>
-          <li><a href="#interactive-tutorials">Interactive Tutorials</a></li>
-          <li><a href="#algorithm-comparison">Algorithm Comparison</a></li>
-          <li><a href="#visual-glossary">Visual Glossary</a></li>
-          <li><a href="#quizzes-challenges">Quizzes & Challenges</a></li>
-          <li><a href="#videos-articles">Videos & Articles</a></li>
-          <li><a href="#community-forum">Community Forum</a></li>
-          <li><a href="#progress-tracking">Progress Tracking</a></li>
+          <li><a href="#playground">Playground</a></li>
+          <li><a href="#interactive-tutorials">Video Explanation</a></li>
+          <li><a href="#algorithm-comparison">Algorithms Comparison</a></li>
+          <li><a href="#visual-glossary">Glossary</a></li>
+          <li><a href="#quizzes-challenges">Quiz</a></li>
+          <li><a href="#videos-articles">More Resources</a></li>
         </ul>
       </nav>
 
       <!-- Main should be flex to not let expand sections to the end. -->
       <main>
+        <section id="playground">
+          <!-- Content for Playgro Tutorials -->
+          <div class="visual-wrapper">
+            <div class="top">
+              <div>
+                <ul class="nav-bar">
+                  <li class="nav-icon">
+                    <i class="icon">Algorithm ></i>
+                    <div id="algo-dropdown" class="dropdown">
+                      <a id="dfs-btn">DFS</a>
+                      <a id="dijkstra-btn">Dijkstra</a>
+                      <a id="bfs-btn">BFS</a>
+                      <a id="astar-btn">A*</a>
+                      <a id="greedyBfs-btn">Greedy BFS</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div><button type="button" id="runButton">run</button></div>
+            </div>
+
+            <div class="table-container">
+              <table
+                id="grid"
+                class="table"
+                cellspacing="0"
+                cellpadding="0"
+              ></table>
+            </div>
+
+            <div class="bottom">
+              <div class="bottom-container">
+                <div class="container-row">
+                  <p>Width:</p>
+                  <div class="slider-container">
+                    <input
+                      type="range"
+                      min="2"
+                      max="60"
+                      value="45"
+                      class="slider"
+                      id="myWidth"
+                    />
+                  </div>
+                </div>
+                <div class="container-row">
+                  <p>Height:</p>
+                  <div class="slider-container">
+                    <input
+                      type="range"
+                      min="2"
+                      max="25"
+                      value="25"
+                      class="slider"
+                      id="myHeight"
+                    />
+                  </div>
+                </div>
+
+                <div class="container-row">
+                  <p>Velocity:</p>
+                  <div>
+                    max
+                    <input
+                      type="range"
+                      min="10"
+                      max="200"
+                      value="10"
+                      steps="10"
+                      class="slider"
+                      id="myVelocity"
+                    />
+                    min
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         <section id="interactive-tutorials">
           <!-- Content for Interactive Tutorials -->
           <p>Video Explanation should go here</p>
