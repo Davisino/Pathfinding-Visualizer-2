@@ -50,8 +50,6 @@ export const colorTd = (e) => {
 
   astar.updateField(Number(row), Number(col));
 
-  // Alter Graph search algorithms Grid
-
   if (e.target.className == "start" || e.target.className == "end") {
     return;
   }

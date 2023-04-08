@@ -1,9 +1,7 @@
 import { velocity } from "../../creator.js";
 var h = 25;
-var w = 45;
+var w = 40;
 export var grid = new Array(h);
-var openSet = [];
-var closedSet = [];
 
 var path = [];
 function removeFromArray(arr, element) {
@@ -27,6 +25,8 @@ function manhattanDistance(nodeOne, nodeTwo) {
   return xChange + yChange;
 }
 export function updateField(row, col) {
+  console.log("--");
+  console.log(grid[row][col]);
   if (grid[row][col].isWall == false) {
     grid[row][col].isWall = true;
   } else {
