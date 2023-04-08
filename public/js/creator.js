@@ -17,7 +17,7 @@ export function updateGraph(newTable, newVertices) {
   mergeVertices();
 }
 
-export const generateTable = (w = 45, h = 25) => {
+export const generateTable = (w = 40, h = 25) => {
   const tableID = document.getElementById("grid");
   tableGraph = new Graph();
   graphVertices = [];
