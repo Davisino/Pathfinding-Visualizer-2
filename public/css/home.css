@@ -97,10 +97,12 @@ td {
 .nav-bar > li {
   display: inline-block;
 }
+
 .nav-icon {
   cursor: pointer;
   background-color: #f1f1f1;
   padding: 8px 16px;
+  color:rgb(17, 67, 154);
   border: none;
   border-radius: 4px;
   transition: background-color 0.2s;
@@ -132,39 +134,6 @@ td {
 .show {
   display: block;
 }
-/* .top ul li:hover {
-  color: white;
-} */
-
-/* .nav-bar li button {
-  border: solid 2px rgb(255, 255, 255);
-  background-color: rgb(17, 67, 154);
-  color: white;
-  font-size: 1rem;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-  transition: 220ms;
-  cursor: pointer;
-  font-weight: bold;
-  font-family: sans-serif;
-  width: fit-content;
-  height: fit-content;
-  padding: 10px 25px 10px 25px;
-  border-radius: 10px;
-} */
-/* 
-.nav-bar li button.algo:hover {
-  color: white;
-  border: solid 1px rgb(255, 255, 255);
-  background: linear-gradient(
-      to left,
-      rgb(6, 143, 136) 50%,
-      rgb(186, 210, 218) 50%
-    )
-    right;
-  background-size: 200%;
-  transition: 0.5s ease-out;
-} */
 
 .nav-bar li.not-algo:hover {
   color: rgb(176, 17, 17);

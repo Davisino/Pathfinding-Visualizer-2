@@ -21,6 +21,8 @@ function updateSelectedAlgo(algo) {
       selectedAlgorithm[key] = false;
     }
   }
+  const algo_to_run = document.getElementById(algo).innerHTML;
+  document.getElementById("deploy-algo").innerHTML = algo_to_run;
   selectedAlgorithm[algo] = true;
 }
 function toggleDropdown() {
