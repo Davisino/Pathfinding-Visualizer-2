@@ -11,8 +11,12 @@ body {
 }
 
 .visual-wrapper {
-   color: rgb(255, 255, 255);
-   padding-top:  5px;
+  color: rgb(255, 255, 255);
+  padding-top:  5px;
+  max-width: 100%;
+}
+#playground {
+  width: 80%;
 }
 #grid {
   border-collapse: collapse;
@@ -65,6 +69,7 @@ td {
 /* TOP */
 .top {
   display: grid;
+  /* width: ; */
   background-color: rgb(17, 67, 154);
   height: fit-content;
   padding-top: 10px;
