@@ -25,13 +25,16 @@ function updateSelectedAlgo(algo) {
   document.getElementById("deploy-algo").innerHTML = algo_to_run;
   selectedAlgorithm[algo] = true;
 }
-function toggleDropdown() {
-  document.getElementById("algo-dropdown").classList.toggle("show");
+
+function toggleDropdown(id) {
+  document.getElementById(id).classList.toggle("show");
 }
 
 document.addEventListener("click", function (event) {
-  if (event.target.closest(".nav-icon")) {
-    toggleDropdown();
+  if (event.target.closest("#algo-nav")) {
+    toggleDropdown("algo-dropdown");
+  } else if (event.target.closest("#maze-nav")) {
+    toggleDropdown("maze-dropdown");
   } else if (!event.target.closest(".dropdown")) {
     var dropdowns = document.getElementsByClassName("dropdown");
     for (var i = 0; i < dropdowns.length; i++) {
