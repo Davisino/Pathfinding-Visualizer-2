@@ -1,21 +1,11 @@
 
-nav.topBar {
-    background-color: rgb(112, 185, 252);
-    color: white;
-}
-nav.topBar > :first-child {
-    font-size: 1.2rem;
+.topBar {
     display: flex;
-    justify-items: center;
     align-items: center;
-}
-nav.topBar > :first-child div {
-    padding: 0 20px 0 20px;
-}
-
-.logo-container {
-    border: solid 2px red;
-}
+    justify-items: center;
+    height: 100px;
+    background-color: rgb(17, 67, 154); 
+}  
 
 #deploy-algo {
     padding-left: 10px;
