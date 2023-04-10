@@ -32,7 +32,6 @@ body {
 
 .container {
   position: relative;
-  width: 500px;
   height: 100%;
 }
 
@@ -102,7 +101,6 @@ td {
   background-color: rgb(17, 67, 154);
   height: fit-content;
   padding: 20px 0;
-  border: solid 2px red;
 }
 .top_column {
   display: flex;
@@ -328,11 +326,10 @@ div.content > nav  a:hover {
 }
 
 div.content > main {
-  padding: 1rem;
-  width: 80%;
+  /* padding: 1rem; */
+  width: 100%;
   display: flex;
   margin: 0 auto;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -459,3 +456,60 @@ div.content > main >  section {
 }
 
 
+.foot {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 100%;
+  
+}
+.foot ul {
+  font-size: 2rem;
+  display: flex;
+  grid-gap: 50px;
+  justify-items: center;
+  margin: auto;
+  list-style: none;
+
+}
+.foot a {
+  color: white;
+  text-decoration: none;
+  box-shadow: inset 0 -1px 0 hsla(0, 0%, 100%, 0.4);
+}
+
+.foot a:hover {
+  box-shadow: inset 0 -1.2em 0 hsla(0, 0%, 100%, 0.4);
+}
+
+.foot li:last-child {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.foot li:hover ~ .hand {
+  animation: wave-animation 0.3s infinite;
+}
+
+/* below is just for demo styling */
+
+.foot div {
+  display: flex;
+  height: 50vh;
+  width: 100%;
+  background-color: rgb(17, 67, 154);
+  line-height: 1.3;
+  font-family: Menlo, monospace;
+}
+
+
+@keyframes wave-animation {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
+}
