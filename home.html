@@ -15,6 +15,7 @@
     <script type="module" src="/js/algos/dijkstras.js" defer></script>
     <script type="module" src="/js/algos/astar/astar.js" defer></script>
     <script type="module" src="/js/animations/logo-script.js" defer></script>
+    <script type="module" src="/js/quiz-script.js" defer></script>
   </head>
   <body>
     <div class="topBar">
@@ -27,11 +28,8 @@
       <nav>
         <ul>
           <li><a href="#playground">Playground</a></li>
-          <li><a href="#interactive-tutorials">Video Explanation</a></li>
-          <li><a href="#algorithm-comparison">Algorithms Comparison</a></li>
           <li><a href="#visual-glossary">Glossary</a></li>
           <li><a href="#quizzes-challenges">Quiz</a></li>
-          <li><a href="#videos-articles">More Resources</a></li>
         </ul>
       </nav>
 
@@ -138,14 +136,7 @@
             </div>
           </div>
         </section>
-        <section id="interactive-tutorials">
-          <!-- Content for Interactive Tutorials -->
-          <p>Video Explanation should go here</p>
-        </section>
-        <section id="algorithm-comparison">
-          <!-- Content for Algorithm Comparison -->
-          <p>Video Explanation comparing the 5 algorithm should go here</p>
-        </section>
+
         <section id="visual-glossary">
           <!-- Content for Visual Glossary -->
 
@@ -287,15 +278,22 @@
                   <label for="q5-d">D. A* Search</label>
                 </div>
               </div>
-
-              <button type="submit" class="submit-button">Submit</button>
+              <div id="feedback"></div>
+              <div class="subtmit-container">
+                <button type="submit" id="submit-btn" class="submit-button">
+                  Submit
+                </button>
+                <button
+                  type="button"
+                  id="try-again-button"
+                  class="submit-button"
+                >
+                  Try Again
+                </button>
+              </div>
             </form>
           </div>
         </section>
-
-        <!-- <section id="videos-articles">
-          <div><a>Extra Resources</a></div>
-        </section> -->
 
         <div class="foot">
           <div>

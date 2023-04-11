@@ -342,6 +342,10 @@ div.content > main >  section {
 
 /* Glossary */
 
+#visual-glossary {
+  width: 80%;
+}
+
 .visual-glossary-container {
   color: rgb(137, 137, 154);
 }
@@ -400,7 +404,6 @@ div.content > main >  section {
 
 .options {
   color: rgb(0, 0, 0);
-  font-weight: bold;;
 }
 .options input[type="radio"] {
   margin-right: 0.5rem;
