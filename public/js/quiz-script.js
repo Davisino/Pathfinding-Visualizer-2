@@ -85,7 +85,6 @@ function checkAnswers() {
     ).innerHTML = `${achievement} Your score is ${score} out of 5`;
     document.getElementById("try-again-button").hidden = false;
   } catch (e) {
-    console.log("Make sure you answered all questions");
-    console.log(e);
+    alert("Make sure you answered all questions");
   }
 }

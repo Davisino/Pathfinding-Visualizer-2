@@ -39,42 +39,58 @@
           <!-- Content for Playgro Tutorials -->
           <div class="visual-wrapper">
             <div class="top">
-              <div class="top_column">
-                <ul class="nav-bar">
-                  <li class="nav-icon" id="algo-nav">
-                    <i class="icon"
-                      ><span>&#9776;</span
-                      ><span id="deploy-algo">Algorithm</span></i
-                    >
-                    <div id="algo-dropdown" class="dropdown">
-                      <a id="dfs-btn">DFS</a>
-                      <a id="dijkstra-btn">Dijkstra</a>
-                      <a id="bfs-btn">BFS</a>
-                      <a id="astar-btn">A*</a>
-                      <a id="greedyBfs-btn">Greedy BFS</a>
-                    </div>
-                  </li>
-                </ul>
+              <div class="top-up">
+                <div class="top_column">
+                  <ul class="nav-bar">
+                    <li class="nav-icon" id="algo-nav">
+                      <i class="icon"
+                        ><span>&#9776;</span
+                        ><span id="deploy-algo">Algorithm</span></i
+                      >
+                      <div id="algo-dropdown" class="dropdown">
+                        <a id="dfs-btn">DFS</a>
+                        <a id="dijkstra-btn">Dijkstra</a>
+                        <a id="bfs-btn">BFS</a>
+                        <a id="astar-btn">A*</a>
+                        <a id="greedyBfs-btn">Greedy BFS</a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="top_column">
+                  <button type="button" id="runButton">run</button>
+                </div>
+                <div class="top_column">
+                  <ul class="nav-bar">
+                    <li class="nav-icon" id="maze-nav">
+                      <i class="icon">
+                        <span>&#9776;</span>
+                        <span id="deploy-maze">Mazes</span>
+                      </i>
+                      <div id="maze-dropdown" class="dropdown">
+                        <a id="maze1-btn">Maze1</a>
+                        <a id="maze2-btn">Maze2</a>
+                        <a id="maze3-btn">Maze3</a>
+                        <a id="maze4-btn">Maze4</a>
+                        <a id="maze5-btn">Maze5</a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <div class="top_column">
-                <button type="button" id="runButton">run</button>
-              </div>
-              <div class="top_column">
-                <ul class="nav-bar">
-                  <li class="nav-icon" id="maze-nav">
-                    <i class="icon">
-                      <span>&#9776;</span>
-                      <span id="deploy-maze">Mazes</span>
-                    </i>
-                    <div id="maze-dropdown" class="dropdown">
-                      <a id="maze1-btn">Maze1</a>
-                      <a id="maze2-btn">Maze2</a>
-                      <a id="maze3-btn">Maze3</a>
-                      <a id="maze4-btn">Maze4</a>
-                      <a id="maze5-btn">Maze5</a>
-                    </div>
-                  </li>
-                </ul>
+              <div class="top-bottom">
+                <div class="node-container">
+                  <p>Start Node</p>
+                  <div id="green-node"></div>
+                </div>
+                <div class="node-container">
+                  <p>Target Node</p>
+                  <div id="red-node"></div>
+                </div>
+                <div class="node-container">
+                  <p>Wall Node</p>
+                  <div id="wall-node"></div>
+                </div>
               </div>
             </div>
 

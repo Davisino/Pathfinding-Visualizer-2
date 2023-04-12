@@ -3,6 +3,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: sans-serif;
+  background-color: #f6f9fc;
  
 } 
 .table {
@@ -17,7 +18,11 @@ body {
   max-width: 100%;
 }
 #playground {
+  padding: 2rem;
+  border-radius: 1rem;
   width: 80%;
+  margin: 2rem auto;
+  background-color: white;
 }
 #grid {
   border-collapse: collapse;
@@ -97,16 +102,59 @@ td {
 /* TOP */
 .top {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   background-color: rgb(17, 67, 154);
+  height: fit-content;
+}
+.top-up {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   height: fit-content;
   padding: 20px 0;
 }
 .top_column {
   display: flex;
   align-items: center;
-  justify-self: center;;
+  justify-self: center;
+
 }
+
+#green-node {
+  background-color: green;
+  width: 25px;
+  height: 25px;
+  border: solid 2px rgba(133, 180, 250, 0.758)
+}
+
+#red-node {
+  background-color: red;
+  width: 25px;
+  height:25px;
+  border: solid 2px rgba(133, 180, 250, 0.758);
+}
+
+#wall-node {
+  background-color: rgb(24, 36, 108);
+  width: 25px;
+  height: 25px;
+  border: solid 2px rgba(133, 180, 250, 0.758);
+}
+
+.top-bottom {
+  display: flex;
+  flex-direction: row;
+}
+
+.node-container {
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.node-container p {
+  margin-right: 5px;
+}
+
 .title {
   font-size: 1.7rem;
   margin: auto 0;
@@ -235,7 +283,6 @@ td {
 .bottom-container .container-row {
   font-size: 1rem;
   padding: 10px;
-
   font-weight: bold;
 }
 @keyframes visited {
@@ -299,9 +346,10 @@ header.titleContent {
 }
 
 div.content > nav{
-  background-color: #ffffff;
+  background-color: #f6f9fc;
     text-align: center;
     padding: 0.5rem;
+
 }
 div.content > nav > ul {
   list-style-type: none;
@@ -343,7 +391,11 @@ div.content > main >  section {
 /* Glossary */
 
 #visual-glossary {
+  padding: 2rem;
+  border-radius: 1rem;
   width: 80%;
+  margin: 2rem auto;
+  background-color: white;
 }
 
 .visual-glossary-container {
@@ -364,7 +416,7 @@ div.content > main >  section {
 
 .glossary-item .term-description {
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 
@@ -376,6 +428,7 @@ div.content > main >  section {
   border-radius: 1rem;
   width: 80%;
   margin: 2rem auto;
+  background-color: white;
 }
 
 .quiz-container {
