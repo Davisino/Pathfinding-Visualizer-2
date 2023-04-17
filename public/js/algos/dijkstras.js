@@ -1,36 +1,18 @@
 import { PriorityQueue } from "./DS/priorityQueue.js";
-import { shortestPathBetween } from "./utils/dijkstras-shortest.js";
 import * as creator from "../creator.js";
-import { velocity } from "../creator.js";
-export function useDijkstras(start, end) {
-  const pathToColorDijkstras = shortestPathBetween(
+import { startAnimation } from "./utils/startAnimation.js";
+export async function useDijkstras(start, end) {
+  let [visitedNodes, path] = getShortestPathBetween(
     creator.tableGraph,
     creator.tableGraph.getVertexByValue(start),
     creator.tableGraph.getVertexByValue(end)
   );
+  path = path.filter((value) => value != start && value != end);
+  // Disable button or other UI elements here
+  const disableButton = document.getElementById("runButton");
+  disableButton.disabled = true;
 
-  // TO DO EXTRACT ALL STRINGNS STARTING WITH $ AND DO THE SET TIME OUT SEPARATELY
-  for (let i = 0; i < pathToColorDijkstras.length; i++) {
-    if (pathToColorDijkstras[i][0] != "$") {
-      setTimeout(() => {
-        const barToColor = document.getElementById(pathToColorDijkstras[i]);
-        barToColor.className = "visited";
-        barToColor.style.borderColor = "white";
-      }, i * velocity);
-    } else {
-      const newId = pathToColorDijkstras[i].slice(1);
-      const stepsToShortestPath = document.getElementById(newId);
-      if (stepsToShortestPath.className === "start") {
-        continue;
-      } else if (stepsToShortestPath.className === "end") {
-        continue;
-      } else {
-        setTimeout(() => {
-          stepsToShortestPath.className = "shortest-path";
-        }, i * velocity);
-      }
-    }
-  }
+  startAnimation(visitedNodes, path);
 }
 
 export const dijkstras = (graph, startingVertex) => {
@@ -79,11 +61,6 @@ let wasTargetPushed = false;
 function findVerticesEdges(vertex, animations) {
   let VerticesToColor = [];
 
-  // If vertex has length 4: push all edges end;
-  // Else:
-  // TOP -> RIGHT -> DOWN -> LEFT
-  // if TOP -> RIGHT -> DOWN -> LEFT right  push them in that order;
-  //  MAKING SURE THE IDX IS NOT REPEATED
   if (vertex.edges.length && wasTargetPushed === false) {
     vertex.edges.map((x) => {
       const box = document.getElementById(x.end.data);
@@ -97,3 +74,15 @@ function findVerticesEdges(vertex, animations) {
   }
   return VerticesToColor;
 }
+
+export const getShortestPathBetween = (graph, startingVertex, targetVertex) => {
+  const { previous, animations } = dijkstras(graph, startingVertex);
+  const path = [];
+
+  let vertex = targetVertex;
+  while (vertex) {
+    path.unshift(`${vertex.data}`);
+    vertex = previous[vertex.data];
+  }
+  return [animations, path];
+};
