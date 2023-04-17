@@ -1,6 +1,5 @@
-import * as graph from "./DS/Graph.js";
 import * as creator from "../creator.js";
-import { velocity } from "../creator.js";
+import { startAnimation } from "./utils/startAnimation.js";
 
 let isTargetFound = false;
 
@@ -22,57 +21,21 @@ export function depthFirstTraversal(start, end, visitedVertices = []) {
       depthFirstTraversal(neighbor, end, visitedVertices);
     }
   });
-
-  return visitedVertices;
+  const visitedNodesId = visitedVertices.map((x) => {
+    return x.data;
+  });
+  return visitedNodesId;
 }
 
-export function useDepthFirstTraversal(start, target) {
+export async function useDepthFirstTraversal(start, target) {
   isTargetFound = false;
-
-  const animations = depthFirstTraversal(
+  let animations = depthFirstTraversal(
     creator.tableGraph.getVertexByValue(start),
     creator.tableGraph.getVertexByValue(target)
   );
-
-  const pathAnimation = getShortestPathDFS(animations);
-
-  let time = animations.length;
-
-  for (let i = 0; i < animations.length; i++) {
-    setTimeout(() => {
-      const getDataFromVertex = animations[i].data;
-      let vertex = document.getElementById(`${getDataFromVertex}`);
-
-      if (
-        vertex.id === start ||
-        vertex.id === target ||
-        vertex.className == "wall"
-      ) {
-      } else {
-        vertex.className = "visited";
-        vertex.style.borderColor = "white";
-      }
-
-      time--;
-      console.log(time);
-      if (time === 0) {
-        for (let idx = 0; idx < pathAnimation.length; idx++) {
-          let index = pathAnimation[idx].slice(1);
-          if (index === start || index === target) continue;
-          setTimeout(() => {
-            document.getElementById(`${index}`).className = "shortest-path";
-          }, idx * (velocity + 20));
-        }
-      }
-    }, i * velocity);
-  }
-}
-
-function getShortestPathDFS(array) {
-  let animations = [];
-  for (let i = 0; i < array.length; i++) {
-    const val = array[i].data;
-    animations.push(`$${val}`);
-  }
-  return animations;
+  animations = animations.filter((value) => {
+    return value != start && value != target;
+  });
+  startAnimation(animations, animations);
+  return;
 }

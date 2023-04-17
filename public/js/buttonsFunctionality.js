@@ -1,11 +1,10 @@
-import * as creator from "./creator.js";
 import * as tableFunctionality from "./tableFunctionality.js";
 import { updateWidthAndHeight } from "./updateWidth.js";
 import { useDepthFirstTraversal } from "./algos/dfs.js";
 import { updateVelocity } from "./creator.js";
 import { useDijkstras } from "./algos/dijkstras.js";
 import { useAstar } from "./algos/astar/astar.js";
-// import { useGreedyBfs } from "./algos/greedyBFS.js";
+import { useGreedyBfs } from "./algos/greedyBFS.js";
 
 let selectedAlgorithm = {
   "dfs-btn": false,
@@ -100,6 +99,6 @@ function runAlgorithm(algo) {
   } else if (algo == "astar-btn") {
     useAstar(start, end);
   } else if (algo == "greedyBfs-btn") {
-    // development
+    useGreedyBfs(start, end);
   }
 }

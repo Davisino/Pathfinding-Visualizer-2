@@ -166,7 +166,6 @@ export function Astar(start, end) {
 }
 
 export function useAstar(start, end) {
-  console.log(grid);
   const [row1, col1] = start.split("-");
   const [row2, col2] = end.split("-");
   start = grid[row1][col1];

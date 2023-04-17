@@ -42,11 +42,6 @@ export class Graph {
   getVertexByValue(value) {
     return this.vertices.find((vertex) => vertex.data === value);
   }
-
-  print() {
-    const vertexList = this.vertices;
-    vertexList.forEach((vertex) => vertex.print());
-  }
 }
 
 export class Vertex {
@@ -65,18 +60,6 @@ export class Vertex {
 
   removeEdge(vertex) {
     this.edges = this.edges.filter((edge) => edge.end !== vertex);
-  }
-
-  print() {
-    const edgeList =
-      this.edges.map((edge) =>
-        edge.weight !== null
-          ? `${edge.end.data} (${edge.weight})`
-          : edge.end.data
-      ) || [];
-
-    const output = `${this.data} --> ${edgeList.join(", ")}`;
-    console.log(output);
   }
 }
 
