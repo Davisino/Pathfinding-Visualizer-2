@@ -1,7 +1,11 @@
 import { velocity } from "../../creator.js";
 export async function startAnimation(visitedNodes, shortestPath) {
-  const disableButton = document.getElementById("runButton");
-  disableButton.disabled = true;
+  const disableRunButton = document.getElementById("runButton");
+  const disableResetButton = document.getElementById("resetButton");
+
+  disableRunButton.disabled = true;
+  disableResetButton.disabled = true;
+
   // Animate visited nodes
   for (let i = 0; i < visitedNodes.length; i++) {
     await new Promise((resolve) => {
@@ -33,5 +37,6 @@ export async function startAnimation(visitedNodes, shortestPath) {
   }
 
   // Re-enable button or other UI elements here
-  disableButton.disabled = false;
+  disableRunButton.disabled = false;
+  disableResetButton.disabled = false;
 }

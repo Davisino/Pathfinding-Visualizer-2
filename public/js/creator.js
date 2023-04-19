@@ -11,6 +11,7 @@ export function updateVelocity(newVelocity) {
 export function updateGraph(newTable, newVertices) {
   tableGraph = newTable;
   graphVertices = newVertices;
+  console.log("hello");
   mergeVertices();
 }
 
