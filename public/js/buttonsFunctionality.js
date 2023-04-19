@@ -5,7 +5,7 @@ import { updateVelocity } from "./creator.js";
 import { useDijkstras } from "./algos/dijkstras.js";
 import { useAstar } from "./algos/astar/astar.js";
 import { useGreedyBfs } from "./algos/greedyBFS.js";
-
+import { generateTable } from "./creator.js";
 let selectedAlgorithm = {
   "dfs-btn": false,
   "dijkstra-btn": false,
@@ -43,6 +43,11 @@ document.addEventListener("click", function (event) {
       }
     }
   }
+});
+
+document.getElementById("resetButton").addEventListener("click", () => {
+  document.getElementById("grid").innerHTML = "";
+  generateTable();
 });
 
 document
