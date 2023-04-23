@@ -8,7 +8,7 @@ export async function startAnimation(visitedNodes, shortestPath) {
 
   // Animate visited nodes
   for (let i = 0; i < visitedNodes.length; i++) {
-    await new Promise((resolve) => {
+    await new Promise((resolve) => {  
       setTimeout(() => {
         const node = document.getElementById(visitedNodes[i]);
         node.className = "visited";

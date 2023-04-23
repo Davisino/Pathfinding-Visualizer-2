@@ -60,6 +60,19 @@ document
 document.getElementById("myVelocity").addEventListener("change", () => {
   updateVelocity(Number(document.getElementById("myVelocity").value));
 });
+document.getElementById("editButton").addEventListener("click", function () {
+  document.getElementById("miniUI").style.display = "block";
+});
+
+document.getElementById("closeMiniUI").addEventListener("click", function () {
+  document.getElementById("miniUI").style.display = "none";
+});
+
+window.addEventListener("click", function (event) {
+  if (event.target == document.getElementById("miniUI")) {
+    document.getElementById("miniUI").style.display = "none";
+  }
+});
 
 document.getElementById("grid").addEventListener("click", (e) => {
   tableFunctionality.colorTd(e);
@@ -107,3 +120,17 @@ function runAlgorithm(algo) {
     useGreedyBfs(start, end);
   }
 }
+
+document.getElementById("editButton").addEventListener("click", function () {
+  document.getElementById("miniUI").style.display = "block";
+});
+
+document.getElementById("closeMiniUI").addEventListener("click", function () {
+  document.getElementById("miniUI").style.display = "none";
+});
+
+window.addEventListener("click", function (event) {
+  if (event.target == document.getElementById("miniUI")) {
+    document.getElementById("miniUI").style.display = "none";
+  }
+});
