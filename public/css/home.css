@@ -580,7 +580,7 @@ div.content > main >  section {
 }
 
 
-#resetButton {
+#run-maze{
   display: inline-block;
   padding: 10px 20px;
   background-color: #3498db;
@@ -595,20 +595,23 @@ div.content > main >  section {
   transition: all 0.2s ease-in-out;
 }
 
-#resetButton:hover {
+#run-maze:hover {
   background-color: #2980b9;
   color: #fff;
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
 }
 
-#resetButton:focus {
+#run-maze:focus {
   outline: none;
 }
 
-#resetButton:active {
+#run-maze:active {
   transform: translateY(2px);
 }
+
+
+
 
 .foot {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
