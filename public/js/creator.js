@@ -11,7 +11,7 @@ export function updateVelocity(newVelocity) {
 export function updateGraph(newTable, newVertices) {
   tableGraph = newTable;
   graphVertices = newVertices;
-  console.log("hello");
+
   mergeVertices();
 }
 
@@ -61,6 +61,7 @@ function createTableCell(i, j, startPoint, endPoint) {
 }
 
 generateTable();
+
 function mergeVertices() {
   const numRows = graphVertices.length;
   const numCols = graphVertices[0].length;
