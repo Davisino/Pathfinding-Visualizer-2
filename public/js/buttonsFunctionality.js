@@ -8,6 +8,8 @@ import { useGreedyBfs } from "./algos/greedyBFS.js";
 import { generateTable } from "./creator.js";
 import { useRecursiveDivision } from "./mazes/recursiveDivision.js";
 import { useRecursiveBacktracking } from "./mazes/recursiveBacktracking.js";
+import { useRandomMaze } from "./mazes/randomMaze.js";
+
 let selectedAlgorithm = {
   "dfs-btn": false,
   "dijkstra-btn": false,
@@ -19,7 +21,7 @@ let selectedAlgorithm = {
 let selectedMazeAlgorithm = {
   "recursiveDivision-btn": false,
   "recursiveBacktracking-btn": false,
-  maze3: false,
+  "randomMaze-btn": false,
   maze4: false,
   maze5: false,
 };
@@ -111,8 +113,8 @@ document
     updateSelectedMazeAlgo("recursiveBacktracking-btn");
   });
 
-document.getElementById("maze3-btn").addEventListener("click", () => {
-  updateSelectedMazeAlgo("maze3-btn");
+document.getElementById("randomMaze-btn").addEventListener("click", () => {
+  updateSelectedMazeAlgo("randomMaze-btn");
 });
 
 document.getElementById("maze4-btn").addEventListener("click", () => {
@@ -183,9 +185,9 @@ function runMazeAlgorithm(maze) {
   } else if (maze == "recursiveBacktracking-btn") {
     console.log("s");
     useRecursiveBacktracking(start, end);
-  } else if (maze == "maze3-btn") {
+  } else if (maze == "randomMaze-btn") {
     // NEED TO CHANGE TO BFS instead
-    useDijkstras(start, end);
+    useRandomMaze(start, end);
   } else if (maze == "maze4-btn") {
     useAstar(start, end);
   } else if (maze == "maze5-btn") {
