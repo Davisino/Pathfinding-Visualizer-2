@@ -19,6 +19,78 @@ function isValidMove(maze, height, width, row, col) {
   return maze[row][col] === 1;
 }
 
+// function huntAndKill(height, width, startX, startY, endX, endY) {
+//   // Initialize maze with all walls (all cells set to 1).
+//   let maze = Array(height)
+//     .fill()
+//     .map(() => Array(width).fill(1));
+
+//   // Start at a random cell.
+//   let currentRow = startX;
+//   let currentCol = startY;
+//   maze[currentRow][currentCol] = 0;
+
+//   while (true) {
+//     // Kill phase: Random walk and carve a path (set to 0) until we reach a cell where we have no unvisited neighbours.
+//     while (true) {
+//       let unvisitedNeighbours = DIRECTIONS.filter(([dx, dy]) =>
+//         isValidMove(
+//           maze,
+//           height,
+//           width,
+//           currentRow + dx * 2,
+//           currentCol + dy * 2
+//         )
+//       );
+//       if (!unvisitedNeighbours.length) {
+//         break;
+//       }
+
+//       // Choose a random unvisited neighbour and move to it.
+//       let [dx, dy] = getRandomElement(unvisitedNeighbours);
+//       maze[currentRow + dx][currentCol + dy] = maze[currentRow + dx * 2][
+//         currentCol + dy * 2
+//       ] = 0;
+//       currentRow += dx * 2;
+//       currentCol += dy * 2;
+//     }
+
+//     // Hunt phase: Find the next cell with unvisited neighbours. If no such cell exists, the algorithm has finished.
+//     let found = false;
+//     for (let row = 0; row < height; row++) {
+//       for (let col = 0; col < width; col++) {
+//         let unvisitedNeighbours = DIRECTIONS.filter(([dx, dy]) =>
+//           isValidMove(maze, height, width, row + dx * 2, col + dy * 2)
+//         );
+//         if (maze[row][col] === 0 && unvisitedNeighbours.length) {
+//           // Choose a random unvisited neighbour and move to it, then continue the kill phase.
+//           let [dx, dy] = getRandomElement(unvisitedNeighbours);
+//           maze[row + dx][col + dy] = maze[row + dx * 2][col + dy * 2] = 0;
+//           currentRow = row + dx * 2;
+//           currentCol = col + dy * 2;
+//           found = true;
+//           break;
+//         }
+//       }
+//       if (found) {
+//         break;
+//       }
+//     }
+//     // Ensure the end point is accessible
+//     for (const [dx, dy] of DIRECTIONS) {
+//       const newRow = endX + dx;
+//       const newCol = endY + dy;
+//       if (newRow >= 0 && newRow < height && newCol >= 0 && newCol < width) {
+//         maze[newRow][newCol] = 0;
+//       }
+//     }
+//     console.log(maze);
+//     maze[startX][startY] = 0;
+//     maze[endX][endY] = 0;
+//     return maze;
+//   }
+// }
+
 function huntAndKill(height, width, startX, startY, endX, endY) {
   // Initialize maze with all walls (all cells set to 1).
   let maze = Array(height)
@@ -26,8 +98,8 @@ function huntAndKill(height, width, startX, startY, endX, endY) {
     .map(() => Array(width).fill(1));
 
   // Start at a random cell.
-  let currentRow = Math.floor(Math.random() * height);
-  let currentCol = Math.floor(Math.random() * width);
+  let currentRow = startX;
+  let currentCol = startY;
   maze[currentRow][currentCol] = 0;
 
   while (true) {
@@ -62,7 +134,7 @@ function huntAndKill(height, width, startX, startY, endX, endY) {
         let unvisitedNeighbours = DIRECTIONS.filter(([dx, dy]) =>
           isValidMove(maze, height, width, row + dx * 2, col + dy * 2)
         );
-        if (!maze[row][col] && unvisitedNeighbours.length) {
+        if (maze[row][col] === 0 && unvisitedNeighbours.length) {
           // Choose a random unvisited neighbour and move to it, then continue the kill phase.
           let [dx, dy] = getRandomElement(unvisitedNeighbours);
           maze[row + dx][col + dy] = maze[row + dx * 2][col + dy * 2] = 0;
@@ -81,8 +153,18 @@ function huntAndKill(height, width, startX, startY, endX, endY) {
     }
   }
 
+  // Ensure the end point is accessible
+  for (const [dx, dy] of DIRECTIONS) {
+    const newRow = endX + dx;
+    const newCol = endY + dy;
+    if (newRow >= 0 && newRow < height && newCol >= 0 && newCol < width) {
+      maze[newRow][newCol] = 0;
+    }
+  }
+
   maze[startX][startY] = 0;
   maze[endX][endY] = 0;
+  console.log(maze);
   return maze;
 }
 
