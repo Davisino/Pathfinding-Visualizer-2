@@ -29,9 +29,7 @@ let selectedMazeAlgorithm = {
 
 function updateSelectedMazeAlgo(algo) {
   for (const key in selectedMazeAlgorithm) {
-    if (key != algo) {
-      selectedAlgorithm[key] = false;
-    }
+    selectedMazeAlgorithm[key] = false;
   }
   const maze_algo_to_run = document.getElementById(algo).innerHTML;
   document.getElementById("deploy-maze").innerHTML = maze_algo_to_run;
@@ -46,6 +44,7 @@ function updateSelectedAlgo(algo) {
   }
   const algo_to_run = document.getElementById(algo).innerHTML;
   document.getElementById("deploy-algo").innerHTML = algo_to_run;
+
   selectedAlgorithm[algo] = true;
 }
 
@@ -153,6 +152,7 @@ document.getElementById("runButton").addEventListener("click", () => {
 });
 
 document.getElementById("run-maze").addEventListener("click", () => {
+  console.log(selectedMazeAlgorithm);
   let mazeSelected = Object.keys(selectedMazeAlgorithm).find(
     (key) => selectedMazeAlgorithm[key] === true
   );
@@ -184,7 +184,6 @@ function runMazeAlgorithm(maze) {
   if (maze == "recursiveDivision-btn") {
     useRecursiveDivision(start, end);
   } else if (maze == "recursiveBacktracking-btn") {
-    console.log("s");
     useRecursiveBacktracking(start, end);
   } else if (maze == "randomMaze-btn") {
     // NEED TO CHANGE TO BFS instead
