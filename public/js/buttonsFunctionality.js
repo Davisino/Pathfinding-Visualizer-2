@@ -10,7 +10,6 @@ import { useRecursiveDivision } from "./mazes/recursiveDivision.js";
 import { useRecursiveBacktracking } from "./mazes/recursiveBacktracking.js";
 import { useRandomMaze } from "./mazes/randomMaze.js";
 import { usePrimsMaze } from "./mazes/primsMaze.js";
-import { useHuntAndKill } from "./mazes/huntAndKill.js";
 let selectedAlgorithm = {
   "dfs-btn": false,
   "dijkstra-btn": false,
@@ -24,7 +23,6 @@ let selectedMazeAlgorithm = {
   "recursiveBacktracking-btn": false,
   "randomMaze-btn": false,
   "primsMaze-btn": false,
-  "huntAndKill-btn": false,
 };
 
 function updateSelectedMazeAlgo(algo) {
@@ -121,10 +119,6 @@ document.getElementById("primsMaze-btn").addEventListener("click", () => {
   updateSelectedMazeAlgo("primsMaze-btn");
 });
 
-document.getElementById("huntAndKill-btn").addEventListener("click", () => {
-  updateSelectedMazeAlgo("huntAndKill-btn");
-});
-
 document.getElementById("dfs-btn").addEventListener("click", () => {
   updateSelectedAlgo("dfs-btn");
 });
@@ -190,8 +184,6 @@ function runMazeAlgorithm(maze) {
     useRandomMaze(start, end);
   } else if (maze == "primsMaze-btn") {
     usePrimsMaze(start, end);
-  } else if (maze == "huntAndKill-btn") {
-    useHuntAndKill(start, end);
   }
 }
 
