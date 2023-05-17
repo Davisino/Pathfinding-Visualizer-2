@@ -170,6 +170,15 @@ export function useAstar(start, end) {
   const [row2, col2] = end.split("-");
   start = grid[row1][col1];
   end = grid[row2][col2];
+
+  let wallsToColor = document.getElementsByClassName("wall");
+  console.log(wallsToColor);
+  for (let i = 0; i < wallsToColor.length; i++) {
+    const idWall = wallsToColor[i].id;
+    const [row, col] = idWall.split("-");
+    grid[Number(row)][Number(col)].isWall = true;
+  }
+  console.log(grid);
   const [animations, shortestDistance] = Astar(start, end);
 
   shortestDistance.forEach((el) => {

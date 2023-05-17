@@ -10,7 +10,6 @@ import { useRecursiveDivision } from "./mazes/recursiveDivision.js";
 import { useRecursiveBacktracking } from "./mazes/recursiveBacktracking.js";
 import { useRandomMaze } from "./mazes/randomMaze.js";
 import { usePrimsMaze } from "./mazes/primsMaze.js";
-import { useHuntAndKill } from "./mazes/huntAndKill.js";
 let selectedAlgorithm = {
   "dfs-btn": false,
   "dijkstra-btn": false,
@@ -24,14 +23,11 @@ let selectedMazeAlgorithm = {
   "recursiveBacktracking-btn": false,
   "randomMaze-btn": false,
   "primsMaze-btn": false,
-  "huntAndKill-btn": false,
 };
 
 function updateSelectedMazeAlgo(algo) {
   for (const key in selectedMazeAlgorithm) {
-    if (key != algo) {
-      selectedAlgorithm[key] = false;
-    }
+    selectedMazeAlgorithm[key] = false;
   }
   const maze_algo_to_run = document.getElementById(algo).innerHTML;
   document.getElementById("deploy-maze").innerHTML = maze_algo_to_run;
@@ -46,6 +42,7 @@ function updateSelectedAlgo(algo) {
   }
   const algo_to_run = document.getElementById(algo).innerHTML;
   document.getElementById("deploy-algo").innerHTML = algo_to_run;
+
   selectedAlgorithm[algo] = true;
 }
 
@@ -122,10 +119,6 @@ document.getElementById("primsMaze-btn").addEventListener("click", () => {
   updateSelectedMazeAlgo("primsMaze-btn");
 });
 
-document.getElementById("huntAndKill-btn").addEventListener("click", () => {
-  updateSelectedMazeAlgo("huntAndKill-btn");
-});
-
 document.getElementById("dfs-btn").addEventListener("click", () => {
   updateSelectedAlgo("dfs-btn");
 });
@@ -153,6 +146,7 @@ document.getElementById("runButton").addEventListener("click", () => {
 });
 
 document.getElementById("run-maze").addEventListener("click", () => {
+  console.log(selectedMazeAlgorithm);
   let mazeSelected = Object.keys(selectedMazeAlgorithm).find(
     (key) => selectedMazeAlgorithm[key] === true
   );
@@ -184,15 +178,12 @@ function runMazeAlgorithm(maze) {
   if (maze == "recursiveDivision-btn") {
     useRecursiveDivision(start, end);
   } else if (maze == "recursiveBacktracking-btn") {
-    console.log("s");
     useRecursiveBacktracking(start, end);
   } else if (maze == "randomMaze-btn") {
     // NEED TO CHANGE TO BFS instead
     useRandomMaze(start, end);
   } else if (maze == "primsMaze-btn") {
     usePrimsMaze(start, end);
-  } else if (maze == "huntAndKill-btn") {
-    useHuntAndKill(start, end);
   }
 }
 
