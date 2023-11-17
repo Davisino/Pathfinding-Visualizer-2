@@ -1,6 +1,5 @@
 
 <div align="center" id="top"> 
-   <img src="./public/images/logo.png" alt="Pathfindingvisualizer2" width=500 height=300/>
 
 &#xa0;
 
