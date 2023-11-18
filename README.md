@@ -1,10 +1,7 @@
 
 <div align="center" id="top"> 
-   <img src="./public/images/logo.png" alt="Pathfindingvisualizer2" width=500 height=300/>
 
-&#xa0;
 
-  <!-- <a href="https://pathfindingvisualizer2.netlify.app">Demo</a> -->
 </div>
 
 <h1 align="center">Pathfinding Visualizer</h1>
@@ -29,39 +26,25 @@
 
 <br>
 
-## :dart: About
+## About
 
 The pathfinding visualizer project is aimed at helping people who are new into graph searching algorithms understand how they work. This project uses 5 different graph/trees search algorithms to find the distance between two points.
 
 I chose this project because I wanted to learn more about data structures and specifically graph data structures. Since I started learning web development I have always dedicated part of my time to learn work on projects and learn new skills. Therefore I chose to do a "programming related" to learn twice as much by having to researching new programming related conceps and coding.
 
-## :sparkles: Features
+## Features
 
-:heavy_check_mark: Grid
+Grid
 
-Here you can draw obstacles by clicking and dragging the cursor over the grid.
-Unfortunately, we cannot drag the two nodes at the moment, so we need to use the
-"random Pointers" feature. This is something I am working towards now.
+<img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2k1eWcwdXFrM2V4anFtMHkyZ3V6czk5cGd3NXQ3M3RybmlhcXZjMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LcjbvNiZqrSAKprKWB/giphy.gif" width=500>
 
-<img src="./public/images/grid.png">
-:heavy_check_mark: Searching Algorithms
+Edit: Slow Motion
 
-The buttons below show the algorithms that can be used.
-The algorithm starts running as soon as you click on one of them.
-<img src="./public/images/algorithms.png">
+<img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTNkcTYyZ2x0ZnUydjBnc25jZGU1YmU2bndlMnRwemI3aGdyampydiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/rrrYP3Bv1y65stJ7PL/giphy.gif" width=500>
 
-:heavy_check_mark: Properties
 
-You can also change the width and height of the grid and even the velocity of the algorithms.
-<img src="./public/images/properties.png" >
 
-:heavy_check_mark: Mazes[development] & random Pointer
-
-Lastly, you can click on mazes and generate a default maze to test each search algorithm.
-
-<img src="./public/images/development.png">
-
-## :rocket: Technologies
+## Technologies
 
 The following tools were used in this project:
 
@@ -70,11 +53,11 @@ The following tools were used in this project:
 - [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
 
-## :white_check_mark: Requirements
+## Requirements
 
 Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
 
-## :checkered_flag: Starting
+## Starting
 
 ```bash
 # Clone this project
@@ -92,7 +75,7 @@ $ node index
 # The server will initialize in the <http://localhost:3000>
 ```
 
-## :memo: License
+## License
 
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
